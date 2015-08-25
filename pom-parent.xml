@@ -1,0 +1,268 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.booking.hms</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<spring_version>4.2.0.RELEASE</spring_version>
+		<fastjson_version>1.2.6</fastjson_version>
+		
+		<mysql_connector_vesion>5.1.36</mysql_connector_vesion>
+		<druid_version>1.0.15</druid_version>
+		<mybatis_version>3.3.0</mybatis_version>
+        <mybatis_spring_version>1.2.3</mybatis_spring_version>
+        <aspectjweaver_version>1.8.6</aspectjweaver_version>
+        
+        <spring_data_redis_version>1.5.2.RELEASE</spring_data_redis_version>
+        <jedis_version>2.6.3</jedis_version>
+		<guava_version>18.0</guava_version>
+		<slf4j_version>1.7.12</slf4j_version>
+		<logback_version>1.1.3</logback_version>
+
+		<servlet_version>3.1.0</servlet_version>
+		<jstl_version>1.2</jstl_version>
+
+		<junit_version>4.12</junit_version>
+		<hamcrest_version>1.3</hamcrest_version>
+
+		<java_source_version>1.7</java_source_version>
+		<java_target_version>1.7</java_target_version>
+		<file_encoding>UTF-8</file_encoding>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<!-- Common libs -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-expression</artifactId>
+                <version>${spring_version}</version>
+            </dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>${spring_data_redis_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectjweaver_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis</artifactId>
+				<version>${mybatis_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mybatis</groupId>
+				<artifactId>mybatis-spring</artifactId>
+				<version>${mybatis_spring_version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql_connector_vesion}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson_version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>${jedis_version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>javax.servlet-api</artifactId>
+			    <version>${servlet_version}</version>
+			    <scope>provided</scope>
+			</dependency>
+			<dependency>
+                <groupId>jstl</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl_version}</version>
+            </dependency>
+
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava_version}</version>
+			</dependency>
+
+
+			<!-- Log libs -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j_version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>jcl-over-slf4j</artifactId>
+			    <version>${slf4j_version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.slf4j</groupId>
+			    <artifactId>log4j-over-slf4j</artifactId>
+			    <version>${slf4j_version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-core</artifactId>
+				<version>${logback_version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback_version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>slf4j-api</artifactId>
+						<groupId>org.slf4j</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-access</artifactId>
+				<version>${logback_version}</version>
+			</dependency>
+
+
+			<!-- Test libs -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit_version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+	            <groupId>org.hamcrest</groupId>
+	            <artifactId>hamcrest-core</artifactId>
+	            <version>${hamcrest_version}</version>
+	            <scope>test</scope>
+	        </dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring_version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <scope>test</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<encoding>${file_encoding}</encoding>
+						<source>${java_source_version}</source>
+						<target>${java_target_version}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.7</version>
+					<configuration>
+						<encoding>${file_encoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-surefire-plugin</artifactId>
+				    <version>2.18.1</version>
+				</plugin>
+				<plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-war-plugin</artifactId>
+				    <version>2.6</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
